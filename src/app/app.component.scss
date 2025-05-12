@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 5%;
+  margin-inline: 8%;
+  padding-block: 1rem;
+  height: auto;
+
+  a {
+    background-color: grey;
+    border-radius: 8px;
+    padding: 10px;
+    color: black;
+    width: 33%;
+
+    &.active {
+      background-color: lightblue;
+    }
+  }
+}

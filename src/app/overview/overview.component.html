@@ -1,0 +1,23 @@
+<article>
+    @if (loading) {
+        <p>loading</p>
+    } @else {
+        @for (car of modelsWithOptions; track car) {
+            <section>
+                <h2>{{ car.description }}</h2>
+                <p>Colors:</p>
+                <ul>
+                @for (color of car.colors; track color) {
+                    <li>{{ color.description }}</li>
+                }
+                </ul>
+                <p>Configurations:</p>
+                <ul>
+                    @for (config of car.configs; track config) {
+                        <li>{{ config.description }}</li>
+                    }
+                </ul>
+            </section>
+        }
+    }
+</article>

@@ -1,0 +1,7 @@
+<header>
+  <a [routerLink]="'overview'" routerLinkActive="active">Overview</a>
+  <a [routerLink]="'step1'" routerLinkActive="active">Step 1</a>
+  <a [routerLink]="service.confSelected() ? 'step2' : null" routerLinkActive="active">Step 2</a>
+</header>
+
+<router-outlet/>

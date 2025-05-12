@@ -1,0 +1,26 @@
+<h1>Step 2: Select your config and options</h1>
+Config:
+<select [(ngModel)]="selectedConfigId" (change)="onConfigChange()">
+  <option [value]="0">Choose...</option>
+  @for (config of configs(); track config) {
+    <option [value]="config.id">
+      {{ config.description }}
+    </option>
+  }
+</select>
+  <div>
+    Range: {{ range() }} miles<br>
+    - Max speed: {{ maxSpeed() }} mph<br>
+    - Cost: {{ cost() | currency: 'USD' : 'symbol' : '4.2-2'}}
+  </div>
+
+  <div>
+    @if (carOptions()?.towHitch) {
+      Tow hitch?
+      <input type="checkbox" />
+    }
+    @if (carOptions()?.yoke) {
+      <br/>
+      Yoke steering wheel? <input type="checkbox" />
+    }
+</div>
